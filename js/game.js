@@ -31,7 +31,13 @@ function game() {
     var target = 0;
     var count  = 0;
     
-    
+    /* Version A.
+     * Only with 'onmousedown' in 'legal' space,the bow would not change.
+     * Weapon position: In the middle of webpage(client measure).
+     * Once 'mousedown',catch (X,Y),return data,stop processing until 'mouseup'.
+     * Version B.
+     * Always follow your mouse(Obviously on PC).Probably.
+     */
     function bow() {
         ctx.save();
         ctx.fillStyle = 'white';
@@ -50,11 +56,31 @@ function game() {
         ctx.drawImage(this.bow, cW/2, cH/2, 50, 16);
         
     }
-
+    
+    /* Display new arrows,like bullet.
+     * After 'mousedown' & 'mouseup',create arrow[index].
+     * Then make it run with the gravity system.(Seems need plugin or physics engine)
+     */
 	  function new_arrow() {
     
 	  }
 	  
+	  /* Once hit,record add.
+	   * Piece of stone/earth/plant with grass(element from game M).
+	   * Try to put it on a single motion track.Pendulum/Linear motion.
+	   */
+	  function hitPlant() {
+	  	
+	  }
+	  
+	  // As for the dynamic movement,here is the function.
+	  function move(m) {
+	  	
+	  }
+	  
+	  /* Previously,the game might not launch in a single view.Like pause and reset.
+	   * So,I let it start by a 'switch',although it just a function.
+	   */
 	  function start() {
         bow();
         
